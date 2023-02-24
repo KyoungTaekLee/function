@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root">
+    <h1></h1>
+    <h1></h1>
+    <div>
+      <h1></h1>
+    </div>
+
+  </div>
+  <script>
+    let root = document.getElementById("root");
+    function percentCalculator(realValue, totalValue) {
+      let result = (realValue / totalValue) * 100;
+      return result + "%";
+    }
+    function minusCalculator(realValue, totalValue) {
+      let minus = realValue - totalValue;
+      return minus;
+    }
+    function plusCalculator(realValue, totalValue) {
+      let plus = realValue + totalValue;
+      return plus;
+    }
+    function togethermax(a, b) {
+      let resulta = [];
+      let resultb = [];
+      let sumab = [];
+      let i = 1;
+      let j = 1;
+
+      for (i = 1; i <= a; i++) {
+        if ((a % i) === 0) {
+          resulta[i] = i;
+        }
+      }
+      for (j = 1; j <= a; j++) {
+        if ((b % j) === 0) {
+          resultb[j] = j;
+        }
+      }
+      sumab = resulta.filter(x => resultb.includes(x));
+
+      return sumab;
+
+    }
+    root.children[0].innerHTML = togethermax(60, 48);
+    console.log(percentCalculator(5, 100));
+    root.children[1].innerHTML = minusCalculator(70, 100);
+    root.children[2].children[0].innerHTML = plusCalculator(5, 3);
+
+  </script>
+</body>
+
+</html>
